@@ -1,0 +1,37 @@
+# Comment goes here
+
+name: Anonymous
+
+names:
+  - Dave
+  - Clark
+  - Five
+
+pound_sig: "#"
+
+book:
+  author: John Steinbeck
+  title: Grapes of Wrath
+
+truth: yes
+
+also_true: True
+
+more_true: true
+
+not_true: false #no, No, FALSE
+
+string_val: "This is a string 'here'"
+
+colon_string: "note: this needs to be wrapped in quotation marks"
+
+include_new_lines: |
+  line line line
+  more more more
+  multi
+
+ignore_new_lines: >
+  this is
+  just
+  one
+  long string

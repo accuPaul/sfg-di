@@ -9,6 +9,7 @@ import sandbox.paul.sfgdi.controllers.MyController;
 import sandbox.paul.sfgdi.controllers.PropertyInjectedController;
 import sandbox.paul.sfgdi.controllers.SetterInjectedController;
 import sandbox.paul.sfgdi.examplebeans.FakeDataSource;
+import sandbox.paul.sfgdi.examplebeans.FakeJmsBroker;
 
 @SpringBootApplication
 //@ComponentScan(basePackages = {"sandbox.paul.sfgdi"})
@@ -20,8 +21,10 @@ public class SfgDiApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 
 		FakeDataSource fakeDataSource =(FakeDataSource) ctx.getBean(FakeDataSource.class);
+		FakeJmsBroker jmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
 
-		System.out.println("User name = "+fakeDataSource.getUser());
+		System.out.println(myController.sayHello()+", "+fakeDataSource.getUser());
+		System.out.println(myController.sayHello()+", "+jmsBroker.getUser());
 
 		/*System.out.println("===== Primary Bean =====");
 		System.out.println(myController.sayHello());

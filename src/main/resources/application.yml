@@ -1,0 +1,12 @@
+sandbox:
+  jms:
+    username: JMS Paul
+    password: thisIsNotSecure
+    dbUrl: www.google.com
+
+---
+spring:
+  profiles: ES
+sandbox:
+  jms:
+    username: Pablo
