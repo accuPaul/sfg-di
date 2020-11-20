@@ -3,12 +3,15 @@ package sandbox.paul.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import sandbox.paul.sfgdi.controllers.ConstructorInjectedController;
 import sandbox.paul.sfgdi.controllers.MyController;
 import sandbox.paul.sfgdi.controllers.PropertyInjectedController;
 import sandbox.paul.sfgdi.controllers.SetterInjectedController;
+import sandbox.paul.sfgdi.examplebeans.FakeDataSource;
 
 @SpringBootApplication
+//@ComponentScan(basePackages = {"sandbox.paul.sfgdi"})
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
@@ -16,7 +19,11 @@ public class SfgDiApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
-		System.out.println("===== Primary Bean =====");
+		FakeDataSource fakeDataSource =(FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+		System.out.println("User name = "+fakeDataSource.getUser());
+
+		/*System.out.println("===== Primary Bean =====");
 		System.out.println(myController.sayHello());
 
 
@@ -36,7 +43,7 @@ public class SfgDiApplication {
 
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
-		System.out.println(constructorInjectedController.getGreeting());
+		System.out.println(constructorInjectedController.getGreeting());*/
 
 
 
